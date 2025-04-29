@@ -1,6 +1,25 @@
 (function ($) {
     "use strict";
+let splashScreen = document.getElementById('splash-screen');
+let logoVar = document.getElementById('splash-logo');
+document.addEventListener('DOMContentLoaded',
+  function () {
+    if (splashScreen) {
+      setTimeout(function () {
+        document.documentElement.style.overflow = "hidden";
+        splashScreen.style.display = "flex"
 
+        setTimeout(function () {
+          document.documentElement.style.overflow = "unset";
+          splashScreen.style.display = "none";
+
+        }, 4000)
+
+      }, 0)
+    }
+  }
+
+)
     // Dropdown on mouse hover
     $(document).ready(function () {
         function toggleNavbarMethod() {
