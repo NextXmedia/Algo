@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Algo - Pumping Solution</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <!-- Favicon -->
+    <link rel="icon" type="icon" href="img/logo o.png">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Bootstrap Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+</head>
+
+<body>
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark">
+        <div class="row py-2 px-lg-5">
+            <div class="col-lg-6 text-center text-lg-left mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center text-white">
+                    <a href="tel:+911234567890" style="color: white;text-decoration: none;"><small><i
+                                class="fa fa-phone mr-2"></i>+012 345 6789</small></a>
+                    <small class="px-3">|</small>
+                    <a href="mailto:info@example.com" style="color: white;text-decoration: none;"><small><i
+                                class="fa fa-envelope mr-2"></i>info@example.com</small></a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center text-lg-right">
+                <div class="d-inline-flex align-items-center">
+                    <a class="text-white px-2" href="https://facebook.com">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="text-white px-2" href="https://twitter.com">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a class="text-white px-2" href="https://linkedin.com">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a class="text-white px-2" href="https://instagram.com">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a class="text-white pl-2" href="https://youtube.com">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0 px-lg-5">
+            <a href="index.html" class="navbar-brand ml-lg-3">
+                <h1 class="m-0 text-uppercase text-primary"><img class="" style="width: 120px;"
+                        src="img/ALGO LOGO[1].png" alt=""></h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
+                <div class="navbar-nav mx-auto py-0">
+                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <a href="#about" class="nav-item nav-link">About</a>
+                    <a href="#products" class="nav-item nav-link">Products</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                        <div class="dropdown-menu m-0">
+                            <!-- <a href="#products" class="dropdown-item">Product Detail</a> -->
+                            <a href="feature.html" class="dropdown-item">Our Features</a>
+                            <!-- <a href="team.html" class="dropdown-item">Instructors</a> -->
+                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                            <a href="contact.html" class="dropdown-item">Contact</a>
+                        </div>
+                    </div>
+                    <!--  -->
+                </div>
+                <a href="contact.html" class="btn btn-primary py-2 px-4 d-none d-lg-block">Request a Quote</a>
+
+                <div
+                    class=" contactright gap-3 d-flex align-items-center py-1 justify-content-md-end justify-content-center mt-md-0 mt-2 pb-md-1 pb-3">
+                    <div id="google_translate_element"></div>
+                    <div class="lang-switcher ">
+                        <button style="z-index: 11111;" class="lang-btn btn btn-primary mt-md-3 py-2 px-4"><i
+                                class="bi bi-globe-asia-australia"></i> Language</button>
+                        <ul class="lang-menu">
+                            <li data-lang="en"><img src="https://flagcdn.com/w40/gb.png"> English</li>
+                            <li data-lang="es"><img src="https://flagcdn.com/w40/es.png"> Spanish</li>
+                            <li data-lang="fr"><img src="https://flagcdn.com/w40/fr.png"> French</li>
+                            <li data-lang="ar"><img src="https://flagcdn.com/w40/sa.png"> Arabic</li>
+                        </ul>
+                    </div>
+                </div>
+                <script>
+                    function googleTranslateElementInit() {
+                        new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+                    }
+
+                    document.querySelectorAll(".lang-menu li").forEach(item => {
+                        item.addEventListener("click", function () {
+                            var language = this.getAttribute("data-lang");
+                            var googleTranslateFrame = document.querySelector(".goog-te-combo");
+
+                            if (googleTranslateFrame) {
+                                googleTranslateFrame.value = language;
+                                googleTranslateFrame.dispatchEvent(new Event("change"));
+
+                                // Apply animation effect
+                                document.body.classList.add("fade-effect");
+                                setTimeout(() => document.body.classList.remove("fade-effect"), 800);
+                            }
+                        });
+                    });
+                </script>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Header Start -->
+    <div class=" owl-carousel main-carousel">
+        <!-- <div class="jumbotron jumbotron-fluid position-relative overlay-bottom py-5" style="margin-bottom: 90px;">
+            <div class="container text-center my-5 py-0 ">
+                <div class="w-100 py-2">
+                    <p class="text-white mt-4 mb-4">Innovative Pumping Solutions for Every Need</p>
+                    <h1 class="text-white  mb-5">Algo provides high-quality, energy-efficient pumping systems for
+                        industrial,
+                        agricultural, and domestic applications.</h1>
+                    <div class="mx-auto mb-5" style="width: 100%; max-width: 600px;">
+
+                        <a href="contact.html" class="btn btn-light py-2 px-4">Request a Quote</a>
+
+                    </div>
+                </div>
+
+            </div>
+        </div> -->
+        <div class="jumbotron jumbotron2 jumbotron-fluid position-relative overlay-bottom py-0"
+            style="margin-bottom: 90px;">
+            <img style="width: 100%;height: 100%; object-fit: cover;" src="img/1.jpg" alt="">
+        </div>
+        <div class="jumbotron jumbotron2 jumbotron-fluid position-relative overlay-bottom py-0"
+            style="margin-bottom: 90px;">
+            <img style="width: 100%;height: 100%; object-fit: cover;" src="img/2.jpg" alt="">
+        </div>
+        <div class="jumbotron jumbotron2 jumbotron-fluid position-relative overlay-bottom py-0"
+            style="margin-bottom: 90px;">
+            <img style="width: 100%;height: 100%; object-fit: cover;" src="img/3.jpg" alt="">
+        </div>
+        <div class="jumbotron jumbotron2 jumbotron-fluid position-relative overlay-bottom py-0"
+            style="margin-bottom: 90px;">
+            <img style="width: 100%;height: 100%; object-fit: cover;" src="img/4.jpg" alt="">
+        </div>
+        <div class="jumbotron jumbotron2 jumbotron-fluid position-relative overlay-bottom py-0"
+            style="margin-bottom: 90px;">
+            <img style="width: 100%;height: 100%; object-fit: cover;" src="img/5.jpg" alt="">
+        </div>
+    </div>
+    <!-- Header End -->
+
+
+    <!-- About Start -->
+    <div class="container-fluid py-sm-5" id="about">
+        <div class="container py-sm-5">
+            <div class="row">
+                <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 500px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-100 h-100" src="img/header.jpg" style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="section-title position-relative mb-4">
+                        <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">About Us</h6>
+                        <h1 class="display-4">About Algo Pumping Solutions</h1>
+                    </div>
+                    <p>With over 15 years of experience in the pumping industry, Algo has established itself as a leader
+                        in innovative fluid handling </p>
+                    <p>Founded in 2008, we've grown from a small local supplier to an international provider of pumping
+                        systems, serving clients across multiple industries including agriculture, manufacturing, and
+                        municipal water systems. </p>
+                    <div class="row pt-3 mx-0">
+                        <div class="col-sm-3 col-6 px-0">
+                            <div class="bg-success text-center p-4">
+                                <h1 class="text-white" data-toggle="counter-up">30</h1>
+                                <h6 class="text-uppercase text-white">Years<span class="d-block">Experience</span></h6>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-6 px-0">
+                            <div class="bg-primary text-center p-4">
+                                <h1 class="text-white" data-toggle="counter-up">1234</h1>
+                                <h6 class="text-uppercase text-white">Our <span class="d-block">Clients</span></h6>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-6 px-0">
+                            <div class="bg-secondary text-center p-4">
+                                <h1 class="text-white" data-toggle="counter-up">24 </h1>
+                                <h6 class="text-uppercase text-white">Total <span class="d-block">Products</span></h6>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-6 px-0">
+                            <div class="bg-warning text-center p-4">
+                                <h1 class="text-white" data-toggle="counter-up">1234</h1>
+                                <h6 class="text-uppercase text-white">Happy<span class="d-block">Clients</span></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Feature Start -->
+    <div class="container-fluid bg-image" style="margin: 90px 0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 my-5 pt-5 pb-lg-5">
+                    <div class="section-title position-relative mb-4">
+                        <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Why Choose Us?
+                        </h6>
+                        <h1 class="display-4">Why You Should Partner with Algo</h1>
+                    </div>
+                    <p class="mb-4 pb-2">At Algo, we specialize in delivering powerful, energy-efficient, and
+                        cost-effective pumping solutions designed for industrial, agricultural, and municipal needs.
+                        Here's why clients across the country choose us as their trusted pumping partner.</p>
+
+                    <div class="d-flex mb-3">
+                        <div class="btn-icon bg-primary mr-4">
+                            <i class="fa fa-2x fa-cogs text-white"></i>
+                        </div>
+                        <div class="mt-n1">
+                            <h4>Advanced Engineering</h4>
+                            <p>Our pumps are engineered with cutting-edge technology for maximum durability,
+                                performance, and energy efficiency.</p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex mb-3">
+                        <div class="btn-icon bg-secondary mr-4">
+                            <i class="fa fa-2x fa-handshake text-white"></i>
+                        </div>
+                        <div class="mt-n1">
+                            <h4>Reliable Support</h4>
+                            <p>We offer 24/7 customer support and on-site assistance to ensure your systems always run
+                                smoothly.</p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex">
+                        <div class="btn-icon bg-warning mr-4">
+                            <i class="fa fa-2x fa-solar-panel text-white"></i>
+                        </div>
+                        <div class="mt-n1">
+                            <h4>Sustainable Solutions</h4>
+                            <p class="m-0">From solar pumps to smart IoT monitoring, we help you go green while staying
+                                efficient and cost-effective.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5" style="min-height: 500px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-100 h-100" src="img/feature.png" style="object-fit: cover;"
+                            alt="Why Choose Algo">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Feature Start -->
+
+
+    <!-- Product Start -->
+    <div id="products" class="container-fluid px-0 py-5">
+        <div class="row mx-0 justify-content-center pt-5">
+            <div class="col-lg-6">
+                <div class="section-title text-center position-relative mb-4">
+                    <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Our Products</h6>
+                    <h1 class="display-4 hh">Checkout Our Products</h1>
+                </div>
+            </div>
+        </div>
+        <div class="owl-carousel product-carousel">
+            <div class="courses-item position-relative">
+                <img class="img-fluid" style="height: 368px;object-fit: cover;" src="img/Product-1.png" alt="">
+                <div class="courses-text">
+                    <h4 class="text-center text-white px-3">uPVC COLUMN PIPE</h4>
+                    <div class="border-top w-100 mt-3">
+                        <div class="d-flex justify-content-between p-4">
+                            <span class="text-white"><i class="fa fa-user mr-2"></i>Algo</span>
+                            <span class="text-white"><i class="fa fa-star mr-2"></i>4.5 </span>
+                        </div>
+                    </div>
+                    <div class="w-100 bg-white text-center p-4">
+                        <a class="btn btn-primary" onclick="pCardFun(0)">Product Detail</a>
+                    </div>
+                </div>
+            </div>
+            <div class="courses-item position-relative">
+                <img class="img-fluid" style="height: 368px;object-fit: cover;" src="img/Product-2.png" alt="">
+                <div class="courses-text">
+                    <h4 class="text-center text-white px-3">SS Submersible Pumps</h4>
+                    <div class="border-top w-100 mt-3">
+                        <div class="d-flex justify-content-between p-4">
+                            <span class="text-white"><i class="fa fa-user mr-2"></i>Algo</span>
+                            <span class="text-white"><i class="fa fa-star mr-2"></i>4.5 </span>
+                        </div>
+                    </div>
+                    <div class="w-100 bg-white text-center p-4">
+                        <a class="btn btn-primary" onclick="pCardFun(1)">Product Detail</a>
+                    </div>
+                </div>
+            </div>
+            <div class="courses-item position-relative">
+                <img class="img-fluid" style="height: 368px;object-fit: cover;" src="img/Product-3.png" alt="">
+                <div class="courses-text">
+                    <h4 class="text-center text-white px-3">Submersible Motors</h4>
+                    <div class="border-top w-100 mt-3">
+                        <div class="d-flex justify-content-between p-4">
+                            <span class="text-white"><i class="fa fa-user mr-2"></i>Algo</span>
+                            <span class="text-white"><i class="fa fa-star mr-2"></i>4.5 </span>
+                        </div>
+                    </div>
+                    <div class="w-100 bg-white text-center p-4">
+                        <a class="btn btn-primary" onclick="pCardFun(2)">Product Detail</a>
+                    </div>
+                </div>
+            </div>
+            <div class="courses-item position-relative">
+                <img class="img-fluid" style="height: 368px;object-fit: cover;" src="img/Product-4.png" alt="">
+                <div class="courses-text">
+                    <h4 class="text-center text-white px-3">High Pressure pumps</h4>
+                    <div class="border-top w-100 mt-3">
+                        <div class="d-flex justify-content-between p-4">
+                            <span class="text-white"><i class="fa fa-user mr-2"></i>Algo</span>
+                            <span class="text-white"><i class="fa fa-star mr-2"></i>4.5 </span>
+                        </div>
+                    </div>
+                    <div class="w-100 bg-white text-center p-4">
+                        <a class="btn btn-primary" onclick="pCardFun(3)">Product Detail</a>
+                    </div>
+                </div>
+            </div>
+            <div class="courses-item position-relative">
+                <img class="img-fluid" style="height: 368px;object-fit: cover;" src="img/Product-5.png" alt="">
+                <div class="courses-text">
+                    <h4 class="text-center text-white px-3">Submersible Flat Cable</h4>
+                    <div class="border-top w-100 mt-3">
+                        <div class="d-flex justify-content-between p-4">
+                            <span class="text-white"><i class="fa fa-user mr-2"></i>Algo</span>
+                            <span class="text-white"><i class="fa fa-star mr-2"></i>4.5 </span>
+                        </div>
+                    </div>
+                    <div class="w-100 bg-white text-center p-4">
+                        <a class="btn btn-primary" onclick="pCardFun(4)">Product Detail</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Product 1 Popup -->
+        <div class="submersible-pumpsets-1 position-fixed  align-items-center justify-content-center px-0 overflow-auto "
+            style="overflow-x: hidden !important;">
+            <i class="bi bi-x-circle h1 " style="z-index: 11111;color: white;" onclick="closedClick(0)"></i>
+            <!-- Header Start -->
+            <div class="jumbotron jumbotron-fluid page-header position-relative overlay-bottom product-1"
+                style="margin-bottom: 0px;background-image: url(img/Product-1.png);">
+                <div style="z-index: 11111;position: relative;" class="container text-center py-5">
+                    <h1 style="z-index: 11111;position: relative;" class="text-white display-1">uPVC COLUMN PIPE</h1>
+                    <div class="d-inline-flex text-white mb-5">
+                        <p class="m-0 text-uppercase"><a class="text-white" onclick="closedClick(0)">Products</a></p>
+                        <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                        <p class="m-0 text-uppercase">uPVC COLUMN PIPE</p>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Header End -->
+
+
+            <div style="background-color: white;" class="container-fluid px-0">
+                <div class="row overflow-auto">
+
+                    <div class="col py-4 px-md-5 px-3">
+                        <!-- <h2 style="color: #004dd3;"> uPVC Column Pipes</h2> -->
+                        <p>Our uPVC Column Pipes offer superior strength, corrosion resistance, and durability
+                            for
+                            borewell and submersible pump applications. Designed for smooth water flow and easy
+                            installation, they ensure reliable performance with minimal maintenance. Ideal for
+                            agricultural, industrial, and domestic use, these pipes provide a cost-effective and
+                            efficient deep well solution.</p>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped text-center">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>Types</th>
+                                        <th>Sizes</th>
+                                        <th>Max Installation Depth</th>
+                                        <th>Max Pressure Rating</th>
+                                        <th>Max Ambient Temp</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Primo ++</td>
+                                        <td>1", 1.25"</td>
+                                        <td>125m/400ft</td>
+                                        <td>12.5kg/cm²</td>
+                                        <td>70°C</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Nano</td>
+                                        <td>1" to 2.5"</td>
+                                        <td>150m/500ft</td>
+                                        <td>15kg/cm²</td>
+                                        <td>70°C</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Medium</td>
+                                        <td>1" to 5"</td>
+                                        <td>210m/700ft</td>
+                                        <td>21kg/cm²</td>
+                                        <td>70°C</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Standard</td>
+                                        <td>1" to 6"</td>
+                                        <td>260m/850ft</td>
+                                        <td>27kg/cm²</td>
+                                        <td>70°C</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Heavy</td>
+                                        <td>1.25" to 6"</td>
+                                        <td>350m/1150ft</td>
+                                        <td>35kg/cm²</td>
+                                        <td>70°C</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Super Heavy</td>
+                                        <td>1.5" to 5"</td>
+                                        <td>350m/1150ft</td>
+                                        <td>35kg/cm²</td>
+                                        <td>70°C</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 2 Popup -->
+        <div class="submersible-pumpsets-1 position-fixed  align-items-center justify-content-center px-0 overflow-auto "
+            style="overflow-x: hidden !important;">
+            <i class="bi bi-x-circle h1 " style="z-index: 11111;color: white;" onclick="closedClick(1)"></i>
+            <!-- Header Start -->
+            <div class="jumbotron jumbotron-fluid page-header position-relative overlay-bottom product-2 product-1"
+                style="margin-bottom: 0px;background-image: url(img/Product-1.png);">
+                <div style="z-index: 11111;position: relative;" class="container text-center py-5">
+                    <h1 style="z-index: 11111;position: relative;" class="text-white display-1">SS Submersible Pump</h1>
+                    <div class="d-inline-flex text-white mb-5">
+                        <p class="m-0 text-uppercase"><a class="text-white" onclick="closedClick(1)">Products</a></p>
+                        <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                        <p class="m-0 text-uppercase">SS Submersible Pump</p>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Header End -->
+
+
+            <div style="background-color: white;" class="container-fluid px-0">
+                <div class="row overflow-auto">
+
+                    <div class="col py-4 px-md-5 px-3 ">
+                        <!-- <h2 style="color: #004dd3;">SS Submersible Pumps</h2> -->
+                        <p>Durable and corrosion-resistant, our SS Submersible Pumps ensure efficient water flow
+                            for
+                            borewells, industries, and agriculture, delivering reliable performance in tough
+                            conditions.</p>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped text-center">
+                                <thead class="table-dark">
+                                    <tr>
+
+                                        <th>Nominal Dia</th>
+                                        <th>Power Range</th>
+                                        <th>Frequency</th>
+                                        <th>Version</th>
+                                        <th>Speed</th>
+                                        <th>Head Max</th>
+                                        <th>Flow Max</th>
+                                        <th>Outlet Size</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <tr>
+                                        <td>4"</td>
+                                        <td>0.37-7.5kW / 0.5-10HP</td>
+                                        <td>480m / 1575ft</td>
+                                        <td>20 ㎥/h</td>
+                                        <td>1¼", 1½", 2"</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6"</td>
+                                        <td>0.55-63kW / 0.75-85HP</td>
+                                        <td>645m / 2115ft</td>
+                                        <td>76 ㎥/h</td>
+                                        <td>2¼", 2½", 3", 4"</td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="5">50Hz & 60Hz <br> 0.5HP to 300HP</td>
+                                        <td>3"</td>
+                                        <td>0.37-1.1kW / 0.5-1.5HP</td>
+                                        <td rowspan="5">
+                                            1Ph - 230V up to 3HP <br>
+                                            3Ph - 380-415V
+                                        </td>
+                                        <td rowspan="5">2900 rpm / 3450 rpm</td>
+                                        <td>144m / 472ft</td>
+                                        <td>3 ㎥/h</td>
+                                        <td>1"</td>
+                                    </tr>
+                                    <tr>
+                                        <td>8"</td>
+                                        <td>5.5-110kW / 7.5-150HP</td>
+                                        <td>475m / 1558ft</td>
+                                        <td>126 ㎥/h</td>
+                                        <td>4", 5"</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10"</td>
+                                        <td>9.3-220kW / 12.5-300HP</td>
+                                        <td>488m / 1600ft</td>
+                                        <td>280 ㎥/h</td>
+                                        <td>6"</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Product 3 Popup -->
+        <div class="submersible-pumpsets-1 position-fixed  align-items-center justify-content-center px-0 overflow-auto"
+            style="overflow-x: hidden !important;">
+            <i class="bi bi-x-circle h1 " style="z-index: 11111;color: white;" onclick="closedClick(2)"></i>
+            <!-- Header Start -->
+            <div class="jumbotron jumbotron-fluid page-header position-relative overlay-bottom product-3 product-1"
+                style="margin-bottom: 0px;background-image: url(img/Product-1.png);">
+                <div style="z-index: 11111;position: relative;" class="container text-center py-5">
+                    <h1 style="z-index: 11111;position: relative;" class="text-white display-1">Submersible Motors</h1>
+                    <div class="d-inline-flex text-white mb-5">
+                        <p class="m-0 text-uppercase"><a class="text-white" onclick="closedClick(2)">Products</a></p>
+                        <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                        <p class="m-0 text-uppercase">Submersible Motors</p>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Header End -->
+
+
+            <div style="background-color: white;" class="container-fluid px-0">
+                <div class="row overflow-auto">
+
+                    <div class="col py-4 px-md-5 px-3 ">
+                        <p>Reliable and efficient, our Submersible Motors deliver high performance for
+                            borewells,
+                            industrial, and agricultural applications, ensuring durability and long-lasting
+                            operation.</p>
+                        <div class="table-responsive">
+                            <table style="width: 250% ;" class="table td4 table-bordered table-striped text-center">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>Nominal Dia</th>
+                                        <th>Power Range</th>
+                                        <th>Frequency</th>
+                                        <th>Speed</th>
+
+                                        <th>Version</th>
+                                        <th>Max. Thrust Load</th>
+                                        <th>Insulation Class</th>
+                                        <th>Protection</th>
+                                        <th>Max. Liquid Temp</th>
+                                        <th>Optional</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="5">4"</td>
+                                        <td>50Hz</td>
+                                        <td>2900 rpm</td>
+                                        <td rowspan="5">0.37-7.5kW / 0.5-10HP</td>
+                                        <td rowspan="5">
+                                            1Ph - 230V - 50Hz / 1Ph - 110 / 220 / 230V - 60Hz <br>
+                                            3Ph - 380V - 50Hz / 3Ph - 220 / 230 / 380 / 460V - 60Hz
+                                        </td>
+                                        <td rowspan="5">3000 - 6500 N</td>
+                                        <td rowspan="5">Class Y</td>
+                                        <td rowspan="5">IP 58 / IP 68</td>
+                                        <td rowspan="5">33°C / 70°C (For PE2+PA Winding)</td>
+                                        <td rowspan="5">High Temperature Motor and PT Sensor on request</td>
+                                    </tr>
+                                    <tr>
+                                        <td>60Hz</td>
+                                        <td>3450 rpm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>60Hz</td>
+                                        <td>3450 rpm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>50Hz</td>
+                                        <td>2900 rpm</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>50Hz</td>
+                                        <td>2900 rpm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6"</td>
+                                        <td>60Hz</td>
+                                        <td>3450 rpm</td>
+                                        <td>4-45kW / 5.5-60HP</td>
+                                        <td>11550 - 27500 N</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7"</td>
+                                        <td>50Hz</td>
+                                        <td>2900 rpm</td>
+                                        <td>7.5-63kW / 10-85HP</td>
+                                        <td>45000 - 55000 N</td>
+                                    </tr>
+                                    <tr>
+                                        <td>8"</td>
+                                        <td>60Hz</td>
+                                        <td>3450 rpm</td>
+                                        <td>37-93kW / 50-125HP</td>
+                                        <td>45000 - 55000 N</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10"</td>
+                                        <td>50Hz</td>
+                                        <td>2900 rpm</td>
+                                        <td>81-185kW / 110-250HP</td>
+                                        <td>75000 N</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Product 4 Popup -->
+        <div class="submersible-pumpsets-1 position-fixed  align-items-center justify-content-center px-0 overflow-auto"
+            style="overflow-x: hidden !important;">
+            <i class="bi bi-x-circle h1 " style="z-index: 11111;color: white;" onclick="closedClick(3)"></i>
+            <!-- Header Start -->
+            <div class="jumbotron jumbotron-fluid page-header position-relative overlay-bottom product-4 product-1"
+                style="margin-bottom: 0px;background-image: url(img/Product-1.png);">
+                <div style="z-index: 11111;position: relative;" class="container text-center py-5">
+                    <h1 style="z-index: 11111;position: relative;" class="text-white display-1">High Pressure Pump</h1>
+                    <div class="d-inline-flex text-white mb-5">
+                        <p class="m-0 text-uppercase"><a class="text-white" onclick="closedClick(3)">Products</a></p>
+                        <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                        <p class="m-0 text-uppercase">High Pressure Pump</p>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Header End -->
+
+
+            <div style="background-color: white;" class="container-fluid px-0">
+                <div class="row overflow-auto">
+
+                    <div class="col py-4 px-md-5 px-3 ">
+                        <p>Algo's High-Pressure Pump – built for power, performance, and reliability. Engineered to
+                            handle the toughest tasks, Algo delivers unmatched pressure and durability for industrial,
+                            commercial, and agricultural needs. Choose Algo – Power That Performs!
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped text-center">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th colspan="7">Vertical Multistage Pumps</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Power Range</strong></td>
+                                        <td colspan="6">0.37-45KW / 0.5-60 HP</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Speed</strong></td>
+                                        <td colspan="6">2900 rpm / 3450 rpm</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Version</strong></td>
+                                        <td colspan="6">1Ph - 230V - 50Hz / 1Ph-110/220/230V-50Hz & 60Hz<br>3Ph
+                                            - 380V - 50Hz 3Ph - 220 230 380V-50Hz & 60Hz</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+
+                            <table class="table table-bordered table-striped text-center">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>Nominal Flow</th>
+                                        <th>Pump Size</th>
+                                        <th>Power Range</th>
+                                        <th>Head Max</th>
+                                        <th>Flow Range</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>2㎥/h</td>
+                                        <td>1" or 1¼</td>
+                                        <td>0.37-3kW</td>
+                                        <td>206m / 675ft</td>
+                                        <td>1-3.5㎥/h</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3㎥/h</td>
+                                        <td>1" or 1¼</td>
+                                        <td>0.37-3kW</td>
+                                        <td>209m / 685ft</td>
+                                        <td>1.2 - 4㎥/h</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4㎥/h</td>
+                                        <td>1" or 1¼</td>
+                                        <td>0.37-4kW</td>
+                                        <td>216m / 798ft</td>
+                                        <td>1-6㎥/h</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5㎥/h</td>
+                                        <td>1" or 1¼</td>
+                                        <td>0.37-5.5kW</td>
+                                        <td>230m / 755ft</td>
+                                        <td>2-8㎥/h</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10㎥/h</td>
+                                        <td>1¼ or 2"</td>
+                                        <td>0.37-7.5kW</td>
+                                        <td>222m / 728ft</td>
+                                        <td>2-14㎥/h</td>
+                                    </tr>
+                                    <tr>
+                                        <td>15㎥/h</td>
+                                        <td>2" or 21½</td>
+                                        <td>1.1-15kW</td>
+                                        <td>224m / 735ft</td>
+                                        <td>8-24㎥/h</td>
+                                    </tr>
+                                    <tr>
+                                        <td>20㎥/h</td>
+                                        <td>2" or 21½</td>
+                                        <td>1.1-18.5kW</td>
+                                        <td>234m / 767ft</td>
+                                        <td>8-28㎥/h</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <table class="table table-bordered table-striped text-center">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>Nominal Flow</th>
+                                        <th>Power Range</th>
+                                        <th>Pump Size</th>
+                                        <th>Head Max</th>
+                                        <th>Flow Range</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>32㎥/h</td>
+                                        <td>1.5-30kW</td>
+                                        <td>2¼ or 3"</td>
+                                        <td>250m / 820ft</td>
+                                        <td>12-40㎥/h</td>
+                                    </tr>
+                                    <tr>
+                                        <td>45㎥/h</td>
+                                        <td>3-45kW</td>
+                                        <td>3"</td>
+                                        <td>309m / 1013ft</td>
+                                        <td>25-55㎥/h</td>
+                                    </tr>
+                                    <tr>
+                                        <td>64㎥/h</td>
+                                        <td>4-45kW</td>
+                                        <td>3" or 4"</td>
+                                        <td>214m / 702ft</td>
+                                        <td>30-80㎥/h</td>
+                                    </tr>
+                                    <tr>
+                                        <td>90㎥/h</td>
+                                        <td>5.5-45kW</td>
+                                        <td>4"</td>
+                                        <td>168m / 551ft</td>
+                                        <td>55-110㎥/h</td>
+                                    </tr>
+                                    <tr>
+                                        <td>120㎥/h</td>
+                                        <td>11-75kW</td>
+                                        <td>5"</td>
+                                        <td>162m / 526ft</td>
+                                        <td>60-150㎥/h</td>
+                                    </tr>
+                                    <tr>
+                                        <td>150㎥/h</td>
+                                        <td>11-75kW</td>
+                                        <td>5"</td>
+                                        <td>157m / 510ft</td>
+                                        <td>80-180㎥/h</td>
+                                    </tr>
+                                    <tr>
+                                        <td>200㎥/h</td>
+                                        <td>85-110kW</td>
+                                        <td>6"</td>
+                                        <td>157m / 510ft</td>
+                                        <td>100-240㎥/h</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 5 Popup -->
+        <div class="submersible-pumpsets-1 position-fixed  align-items-center justify-content-center px-0 overflow-auto"
+            style="overflow-x: hidden !important;">
+            <i class="bi bi-x-circle h1 " style="z-index: 11111;color: white;" onclick="closedClick(4)"></i>
+            <!-- Header Start -->
+            <div class="jumbotron jumbotron-fluid page-header position-relative overlay-bottom product-5 product-1"
+                style="margin-bottom: 0px;background-image: url(img/Product-1.png);">
+                <div style="z-index: 11111;position: relative;" class="container text-center py-5">
+                    <h1 style="z-index: 11111;position: relative;" class="text-white display-1">Submersible Flat Cables
+                    </h1>
+                    <div class="d-inline-flex text-white mb-5">
+                        <p class="m-0 text-uppercase"><a class="text-white" onclick="closedClick(4)">Products</a></p>
+                        <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                        <p class="m-0 text-uppercase">Submersible Flat Cables</p>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Header End -->
+
+
+            <div style="background-color: white;" class="container-fluid px-0">
+                <div class="row overflow-auto">
+
+                    <div class="col py-4 px-md-5 px-3 ">
+                        <p>Durable and flexible, our Submersible Flat Cables ensure reliable power transmission
+                            for
+                            underwater and deep-well applications. Designed for moisture resistance and
+                            longevity,
+                            they are ideal for borewell pumps and industrial water systems.</p>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped text-center">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>Types</th>
+                                        <th>Sizes</th>
+                                        <th>Type</th>
+                                        <th>Insulation</th>
+                                        <th>Sheath</th>
+                                        <th>Voltage</th>
+                                        <th>Temperature Range</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Submersible Cables</td>
+                                        <td>1.5 to 150 Sq.mm</td>
+                                        <td>3 Core / 4 Core, Flat / Round Cables</td>
+                                        <td>PVC / EPDM / NBR / H07RNF</td>
+                                        <td>PVC / EPDM / Rubber</td>
+                                        <td>1100 V</td>
+                                        <td>
+                                            -15°C to 70°C (PVC Cables) <br>
+                                            -40°C to 90°C (EPDM & Rubber Cables)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Winding Wires</td>
+                                        <td>0.4 to 3mm</td>
+                                        <td>Polywrap (BOPP) / PVC Winding Wires</td>
+                                        <td colspan="4">-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>PV Solar Cables</td>
+                                        <td>1.5 Sq.mm to 240 Sq.mm</td>
+                                        <td>XLPO Insulation</td>
+                                        <td colspan="2">Withstands max. temp. of 120°C</td>
+                                        <td colspan="2">-</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</div>
+</div>
+</div>
+
+
+</div>
+<!-- Product End -->
+
+
+
+
+
+<!-- Testimonial Start -->
+<div class="container-fluid bg-image py-5" style="margin: 90px 0;">
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-5 mb-5 mb-lg-0">
+                <div class="section-title position-relative mb-4">
+                    <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Testimonial</h6>
+                    <h1 class="display-4">What Our Clients Say</h1>
+                </div>
+                <p class="m-0">At Algo, our clients' satisfaction is our top priority. From industrial sites to
+                    remote farms, our pumping solutions deliver performance and reliability that speak for
+                    themselves. Here's what our customers have to say.</p>
+            </div>
+            <div class="col-lg-7">
+                <div class="owl-carousel testimonial-carousel">
+                    <div class="bg-white p-5">
+                        <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
+                        <p>"Algo's pumps have dramatically improved the efficiency of our operations. Their team
+                            provided great service from consultation to installation."</p>
+                        <div class="d-flex flex-shrink-0 align-items-center mt-4">
+                            <img class="img-fluid mr-4 rounded-circle" src="img/testimonial-1.jpg" alt="">
+                            <div>
+                                <h5>Michael Johnson</h5>
+                                <span>Plant Manager, ABC Manufacturing</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-5">
+                        <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
+                        <p>"We use Algo's solar pumps across multiple farmlands. They've proven to be extremely
+                            reliable and energy-efficient, even in harsh climates."</p>
+                        <div class="d-flex flex-shrink-0 align-items-center mt-4">
+                            <img class="img-fluid mr-4 rounded-circle" src="img/testimonial-2.jpg" alt="">
+                            <div>
+                                <h5>Sarah Williams</h5>
+                                <span>Owner, Green Valley Farms</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-5">
+                        <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
+                        <p>"We’ve trusted Algo for over 5 years with our municipal water supply systems. Their pumps
+                            have proven to be durable and efficient."</p>
+                        <div class="d-flex flex-shrink-0 align-items-center mt-4">
+                            <img class="img-fluid mr-4 rounded-circle" src="img/testimonial-2.jpg" alt="">
+                            <div>
+                                <h5>David Rodriguez</h5>
+                                <span>Engineer, Springfield City Water Dept.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Testimonial End -->
+
+
+
+<!-- Contact Start -->
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-5 mb-5 mb-lg-0">
+                <div class="bg-light d-flex flex-column justify-content-center px-5" style="height: 450px;">
+                    <div class="d-flex align-items-center mb-5">
+                        <div class="btn-icon bg-primary mr-4">
+                            <i class="fa fa-2x fa-map-marker-alt text-white"></i>
+                        </div>
+                        <div class="mt-n1">
+                            <h4>Our Location</h4>
+                            <p class="m-0">Ahmedabad, Gujarat</p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-5">
+                        <div class="btn-icon bg-secondary mr-4">
+                            <i class="fa fa-2x fa-phone-alt text-white"></i>
+                        </div>
+                        <div class="mt-n1">
+                            <h4>Call Us</h4>
+                            <p class="m-0">+012 345 6789</p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="btn-icon bg-warning mr-4">
+                            <i class="fa fa-2x fa-envelope text-white"></i>
+                        </div>
+                        <div class="mt-n1">
+                            <h4>Email Us</h4>
+                            <p class="m-0">info@example.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="section-title position-relative mb-4">
+                    <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Need Help?</h6>
+                    <h1 class="display-4">Send Us A Message</h1>
+                </div>
+                <div class="contact-form">
+                    <form id="whatsappForm">
+                        <div class="row">
+                            <div class="col-6 form-group">
+                                <input type="text" id="name"
+                                    class="form-control border-top-0 border-right-0 border-left-0 p-0"
+                                    placeholder="Your Name" required>
+                            </div>
+                            <div class="col-6 form-group">
+                                <input type="email" id="email"
+                                    class="form-control border-top-0 border-right-0 border-left-0 p-0"
+                                    placeholder="Your Email" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 form-group">
+                                <input type="number" id="phone"
+                                    class="form-control border-top-0 border-right-0 border-left-0 p-0"
+                                    placeholder="Phone Number" required>
+                            </div>
+                            <div class="col-6 form-group">
+                                <input type="text" id="city"
+                                    class="form-control border-top-0 border-right-0 border-left-0 p-0"
+                                    placeholder="City" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 form-group">
+                                <input type="number" id="pincode"
+                                    class="form-control border-top-0 border-right-0 border-left-0 p-0"
+                                    placeholder="Pincode" required>
+                            </div>
+                            <div class="col-6 form-group">
+                                <select id="country" class="form-control border-top-0 border-right-0 border-left-0 p-0">
+                                    <option value="" disabled="" selected="">Country</option>
+                                    <option value="India">India</option>
+                                    <option value="USA">USA</option>
+                                    <option value="UK">UK</option>
+                                    <option value="Canada">Canada</option>
+                                    <option value="Australia">Australia</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" class="form-control border-top-0 border-right-0 border-left-0 p-0"
+                                rows="5" placeholder="Message" required></textarea>
+                        </div>
+                        <div>
+                            <button class="btn btn-primary py-3 px-5" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact End -->
+
+
+
+<!-- Footer Start -->
+<div class="container-fluid position-relative overlay-top bg-dark text-white-50 py-5 " style="margin-top: 90px;">
+    <div class="container mt-5 pt-5">
+        <div class="row">
+            <div class="col-md-6 mb-5">
+                <a href="index.html" class="navbar-brand">
+                    <h1 class="mt-n2 text-uppercase text-white"><img width="100px" style="filter: brightness(1000%);"
+                            src="img/ALGO LOGO[1].png" alt=""></h1>
+                </a>
+                <p class="m-0">Founded in 2008, we've grown from a small local supplier to an international provider
+                    of pumping systems, serving clients across multiple industries including agriculture,
+                    manufacturing, and municipal water systems.</p>
+            </div>
+            <!-- <div class="col-md-6 mb-5">
+                    <h3 class="text-white mb-4">Newsletter</h3>
+                    <div class="w-100">
+                        <div class="input-group">
+                            <input type="text" class="form-control border-light" style="padding: 30px;" placeholder="Your Email Address">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary px-4">Sign Up</button>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-5">
+                <h3 class="text-white mb-4">Get In Touch</h3>
+                <p><a href="https://g.co/kgs/JbPYRTM" style="color: rgba(255, 255, 255, 0.5);text-decoration: none;"><i
+                            class="fa fa-map-marker-alt mr-2"></i>Ahmedabad, Gujarat</a></p>
+                <p><a href="tel:+911234567890" style="color: rgba(255, 255, 255, 0.5);text-decoration: none;"><i
+                            class="fa fa-phone mr-2"></i>+012 345 67890</a></p>
+                <p><a href="mailto:info@example.com" style="color: rgba(255, 255, 255, 0.5);text-decoration: none;"><i
+                            class="fa fa-envelope mr-2"></i>info@example.com</a></p>
+                <div class="d-flex justify-content-start mt-4">
+
+                    <a class="text-white mr-4" href="https://facebook.com">
+                        <i class="fab fa-2x fa-facebook-f"></i>
+                    </a>
+                    <a class="text-white mr-4" href="https://twitter.com">
+                        <i class="fab fa-2x fa-twitter"></i>
+                    </a>
+                    <a class="text-white mr-4" href="https://linkedin.com">
+                        <i class="fab fa-2x fa-linkedin-in"></i>
+                    </a>
+                    <a class="text-white mr-4" href="https://instagram.com">
+                        <i class="fab fa-2x fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-5">
+                <h3 class="text-white mb-4">Our Products</h3>
+                <div class="d-flex flex-column justify-content-start">
+                    <a class="text-white-50 mb-2" href="#products"><i class="fa fa-angle-right mr-2"></i>SS Submersible
+                        Pumps</a>
+                    <a class="text-white-50 mb-2" href="#products"><i class="fa fa-angle-right mr-2"></i>Submersible
+                        Motors</a>
+                    <a class="text-white-50 mb-2" href="#products"><i class="fa fa-angle-right mr-2"></i>High Pressure
+                        pumps</a>
+                    <a class="text-white-50 mb-2" href="#products"><i class="fa fa-angle-right mr-2"></i>uPVC Column
+                        Pipes</a>
+                    <a class="text-white-50" href="#products"><i class="fa fa-angle-right mr-2"></i>Submersible
+                        FlatCable</a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-5">
+                <h3 class="text-white mb-4">Quick Links</h3>
+                <div class="d-flex flex-column justify-content-start">
+                    <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                    <a class="text-white-50 mb-2" href="#about"><i class="fa fa-angle-right mr-2"></i>About Us</a>
+                    <a class="text-white-50 mb-2" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+                    <a class="text-white-50 mb-2" href="testimonial.html"><i class="fa fa-angle-right mr-2"></i>Testimonial</a>
+                    <a class="text-white-50" href="#products"><i class="fa fa-angle-right mr-2"></i>Our Products</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid bg-dark text-white-50 border-top py-4"
+    style="border-color: rgba(256, 256, 256, .1) !important;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 text-center text-md-left mb-3 mb-md-0">
+                <p class="m-0">Copyright &copy; <a class="text-white" href="#">Algo</a>. All Rights Reserved.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg btn-primary rounded-0 btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/waypoints/waypoints.min.js"></script>
+<script src="lib/counterup/counterup.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+<!--Javascript -->
+<script src="js/main.js"></script>
+<script src="js/script.js"></script>
+</body>
+
+</html>
