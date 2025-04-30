@@ -137,6 +137,7 @@ document.addEventListener('DOMContentLoaded',
         dots: false,
         loop: true,
         nav: false,
+        autowidth: false,
         // navText: [
         //     '<i class="bi bi-chevron-double-left  nnnn btn btn-outline-light" aria-hidden="true"></i>',
         //     '<i class="bi bi-chevron-double-right nnnn2 btn btn-outline-light" aria-hidden="true"></i>'
